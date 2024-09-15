@@ -1,0 +1,6 @@
+import yfinance as yf
+
+def get_options_prices(ticker='AAPL'):
+    stock = yf.Ticker(ticker)
+    options = stock.option_chain()
+    return options.calls['lastPrice'] 
